@@ -3,6 +3,12 @@
 
 #include <QWidget>
 #include <QFileDialog>
+#include <QMessageBox>
+#include <QFileInfo>
+#include <QFile>
+#include <QDate>
+#include <QTime>
+#include <QTextStream>
 #include "hashmanager.h"
 
 namespace Ui {
@@ -21,7 +27,10 @@ private:
     Ui::HashModePanel *ui;
 
     void onClick_btnBrowseFile();
+    void onClick_btnBrowseCompareFile();
     void onClick_btnGetHash();
+    void showMsg(QString title, QString msg);
+    void saveResult();
     void toggleCompare();
 };
 

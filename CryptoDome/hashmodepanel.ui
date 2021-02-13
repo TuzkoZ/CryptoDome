@@ -63,7 +63,7 @@
      <item row="5" column="0">
       <widget class="QCheckBox" name="checkCompare">
        <property name="text">
-        <string>Сравнить результат с (введите хэш или выберите файл для сравнения)</string>
+        <string>Сравнить результат с (выберите файл для сравнения)</string>
        </property>
       </widget>
      </item>
