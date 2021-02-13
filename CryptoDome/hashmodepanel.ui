@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>HashModePanel</class>
+ <widget class="QWidget" name="HashModePanel">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>574</width>
+    <height>370</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="text">
+      <string>Работа с хэш-суммами</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Файл:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" colspan="2">
+      <widget class="Line" name="line">
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0" colspan="2">
+      <widget class="Line" name="line_2">
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" colspan="2">
+      <widget class="QCheckBox" name="checkSaveTxt">
+       <property name="text">
+        <string>Сохранить результат в txt файл</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLineEdit" name="leFilePath"/>
+     </item>
+     <item row="5" column="0">
+      <widget class="QCheckBox" name="checkCompare">
+       <property name="text">
+        <string>Сравнить результат с (введите хэш или выберите файл для сравнения)</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="0" colspan="2">
+      <widget class="QLineEdit" name="leResultHash"/>
+     </item>
+     <item row="13" column="0">
+      <spacer name="verticalSpacer">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
+     </item>
+     <item row="1" column="1">
+      <widget class="QPushButton" name="btnBrowseFile">
+       <property name="text">
+        <string>Выбрать файл</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="2">
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="label_3">
+         <property name="text">
+          <string>Алгоритм:</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="comboAlgorithm">
+         <property name="currentIndex">
+          <number>0</number>
+         </property>
+         <item>
+          <property name="text">
+           <string>Md4</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Md5</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Sha1</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Sha224</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Sha256</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Sha384</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Sha512</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Sha3_224</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Sha3_256</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Sha3_384</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Sha3_512</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="9" column="0" colspan="2">
+      <widget class="QPushButton" name="btnGetHash">
+       <property name="text">
+        <string>Получить хэш-сумму</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>Результат:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLineEdit" name="leCompareHash">
+         <property name="enabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item row="6" column="1">
+      <widget class="QPushButton" name="btnBrowsCompFile">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+       <property name="text">
+        <string>Выбрать файл</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
