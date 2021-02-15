@@ -15,6 +15,7 @@ QMAKE_CXXFLAGS_RELEASE += /MT
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
+    cryptmanager.cpp \
     filemodepanel.cpp \
     hashmanager.cpp \
     hashmodepanel.cpp \
@@ -25,6 +26,7 @@ SOURCES += \
     textmodepanel.cpp
 
 HEADERS += \
+    cryptmanager.h \
     filemodepanel.h \
     hashmanager.h \
     hashmodepanel.h \
