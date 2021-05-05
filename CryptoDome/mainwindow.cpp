@@ -8,6 +8,11 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    ui->btnTextModePanel->setVisible(false);
+
+    idleModePanel = new idlePanel();
+    ui->verticalLayout_4->insertWidget(0, idleModePanel);
+
     connect(ui->btnFileModePanel, &QPushButton::clicked, this, &MainWindow::onClick_btnFileModePanel);
     connect(ui->btnTextModePanel, &QPushButton::clicked, this, &MainWindow::onClick_btnTextModePanel);
     connect(ui->btnSignModePanel, &QPushButton::clicked, this, &MainWindow::onClick_btnSignModePanel);
@@ -27,19 +32,14 @@ void MainWindow::onClick_btnFileModePanel()
         {
             clearLayout();
             fileModeIsOpened = false;
-            panelIsOpened = false;
         }
+        clearLayout();
         fileModePanel = new FileModePanel();
         ui->verticalLayout_4->insertWidget(0, fileModePanel);
         fileModeIsOpened = true;
-        panelIsOpened = true;
-        qDebug() << "WOW";
-    }
-    else
-    {
-        clearLayout();
-        fileModeIsOpened = false;
-        panelIsOpened = false;
+        textModeIsOpened = false;
+        hashModeIsOpened = false;
+        signModeIsOpened = false;
     }
 }
 
@@ -51,17 +51,14 @@ void MainWindow::onClick_btnTextModePanel()
         {
             clearLayout();
             fileModeIsOpened = false;
-            panelIsOpened = false;
         }
+        clearLayout();
         textModePanel = new TextModePanel();
         ui->verticalLayout_4->insertWidget(1, textModePanel);
         textModeIsOpened = true;
-        qDebug() << "WOW";
-    }
-    else
-    {
-        clearLayout();
-        textModeIsOpened = false;
+        fileModeIsOpened = false;
+        hashModeIsOpened = false;
+        signModeIsOpened =false;
     }
 }
 
@@ -73,17 +70,14 @@ void MainWindow::onClick_btnSignModePanel()
         {
             clearLayout();
             signModeIsOpened = false;
-            panelIsOpened = false;
         }
+        clearLayout();
         signModePanel = new SignModePanel();
         ui->verticalLayout_4->insertWidget(1, signModePanel);
         signModeIsOpened = true;
-        qDebug() << "WOW";
-    }
-    else
-    {
-        clearLayout();
-        signModeIsOpened = false;
+        textModeIsOpened = false;
+        hashModeIsOpened = false;
+        fileModeIsOpened = false;
     }
 }
 
@@ -95,17 +89,14 @@ void MainWindow::onClick_btnHashModePanel()
         {
             clearLayout();
             hashModeIsOpened = false;
-            panelIsOpened = false;
         }
+        clearLayout();
         hashModePanel = new HashModePanel();
         ui->verticalLayout_4->insertWidget(1, hashModePanel);
         hashModeIsOpened = true;
-        qDebug() << "WOW";
-    }
-    else
-    {
-        clearLayout();
-        hashModeIsOpened = false;
+        fileModeIsOpened = false;
+        textModeIsOpened = false;
+        signModeIsOpened = false;
     }
 }
 
@@ -115,6 +106,7 @@ void MainWindow::clearLayout()
         delete item->widget();
         delete item;
     }
+
     fileModeIsOpened = false;
     textModeIsOpened = false;
     signModeIsOpened = false;

@@ -4,8 +4,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 CONFIG += c++11
 
-INCLUDEPATH += "D:\Tools\Libraries\cryptopp"
-LIBS += D:\Tools\Libraries\cryptopp\Win32\Output\Release\cryptlib.lib
+INCLUDEPATH += "E:\Programming\Libs\CryptoPP"
+LIBS += E:\Programming\Libs\CryptoPP\Win32\Output\Release\cryptlib.lib
 
 QMAKE_CXXFLAGS_DEBUG += /MTd
 QMAKE_CXXFLAGS_RELEASE += /MT
@@ -19,6 +19,7 @@ SOURCES += \
     filemodepanel.cpp \
     hashmanager.cpp \
     hashmodepanel.cpp \
+    idlepanel.cpp \
     main.cpp \
     mainwindow.cpp \
     signmanager.cpp \
@@ -30,6 +31,7 @@ HEADERS += \
     filemodepanel.h \
     hashmanager.h \
     hashmodepanel.h \
+    idlepanel.h \
     mainwindow.h \
     signmanager.h \
     signmodepanel.h \
@@ -38,6 +40,7 @@ HEADERS += \
 FORMS += \
     filemodepanel.ui \
     hashmodepanel.ui \
+    idlepanel.ui \
     mainwindow.ui \
     signmodepanel.ui \
     textmodepanel.ui

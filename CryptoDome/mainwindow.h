@@ -7,6 +7,7 @@
 #include "textmodepanel.h"
 #include "signmodepanel.h"
 #include "hashmodepanel.h"
+#include "idlepanel.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -26,6 +27,7 @@ private:
     TextModePanel *textModePanel = nullptr;
     SignModePanel *signModePanel = nullptr;
     HashModePanel *hashModePanel = nullptr;
+    idlePanel *idleModePanel = nullptr;
 
     bool panelIsOpened = false;
     bool fileModeIsOpened = false;
