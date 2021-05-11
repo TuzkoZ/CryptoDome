@@ -1,4 +1,4 @@
-QT       += core gui
+QT       += core gui network
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -24,7 +24,8 @@ SOURCES += \
     mainwindow.cpp \
     signmanager.cpp \
     signmodepanel.cpp \
-    textmodepanel.cpp
+    textmodepanel.cpp \
+    yandexmodepanel.cpp
 
 HEADERS += \
     cryptmanager.h \
@@ -35,7 +36,8 @@ HEADERS += \
     mainwindow.h \
     signmanager.h \
     signmodepanel.h \
-    textmodepanel.h
+    textmodepanel.h \
+    yandexmodepanel.h
 
 FORMS += \
     filemodepanel.ui \
@@ -43,7 +45,8 @@ FORMS += \
     idlepanel.ui \
     mainwindow.ui \
     signmodepanel.ui \
-    textmodepanel.ui
+    textmodepanel.ui \
+    yandexmodepanel.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

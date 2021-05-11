@@ -17,6 +17,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->btnTextModePanel, &QPushButton::clicked, this, &MainWindow::onClick_btnTextModePanel);
     connect(ui->btnSignModePanel, &QPushButton::clicked, this, &MainWindow::onClick_btnSignModePanel);
     connect(ui->btnHashModePanel, &QPushButton::clicked, this, &MainWindow::onClick_btnHashModePanel);
+    connect(ui->btnYandexModePanel, &QPushButton::clicked, this, &MainWindow::onClick_btnYandexModePanel);
 }
 
 MainWindow::~MainWindow()
@@ -40,6 +41,7 @@ void MainWindow::onClick_btnFileModePanel()
         textModeIsOpened = false;
         hashModeIsOpened = false;
         signModeIsOpened = false;
+        yandexModeIsOpened = false;
     }
 }
 
@@ -59,6 +61,7 @@ void MainWindow::onClick_btnTextModePanel()
         fileModeIsOpened = false;
         hashModeIsOpened = false;
         signModeIsOpened =false;
+        yandexModeIsOpened = false;
     }
 }
 
@@ -78,6 +81,7 @@ void MainWindow::onClick_btnSignModePanel()
         textModeIsOpened = false;
         hashModeIsOpened = false;
         fileModeIsOpened = false;
+        yandexModeIsOpened = false;
     }
 }
 
@@ -97,6 +101,7 @@ void MainWindow::onClick_btnHashModePanel()
         fileModeIsOpened = false;
         textModeIsOpened = false;
         signModeIsOpened = false;
+        yandexModeIsOpened = false;
     }
 }
 
@@ -111,5 +116,26 @@ void MainWindow::clearLayout()
     textModeIsOpened = false;
     signModeIsOpened = false;
     hashModeIsOpened = false;
+    yandexModeIsOpened = false;
+}
+
+void MainWindow::onClick_btnYandexModePanel()
+{
+    if(yandexModeIsOpened == false)
+    {
+        if(ui->verticalLayout_4->count() > 0)
+        {
+            clearLayout();
+            yandexModeIsOpened = false;
+        }
+        clearLayout();
+        yandexModePanel = new YandexModePanel();
+        ui->verticalLayout_4->insertWidget(1, yandexModePanel);
+        hashModeIsOpened = false;
+        fileModeIsOpened = false;
+        textModeIsOpened = false;
+        signModeIsOpened = false;
+        yandexModeIsOpened = true;
+    }
 }
 
