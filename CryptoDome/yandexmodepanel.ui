@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>300</height>
+    <height>403</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -44,19 +44,22 @@
        </property>
       </widget>
      </item>
+     <item row="2" column="0" colspan="2">
+      <widget class="Line" name="line">
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
     </layout>
    </item>
    <item>
     <layout class="QGridLayout" name="gridLayout_2">
      <item row="2" column="1">
       <widget class="QLineEdit" name="leFilePath"/>
-     </item>
-     <item row="5" column="0" colspan="3">
-      <widget class="QPushButton" name="btnUploadFile">
-       <property name="text">
-        <string>Отправить на Яндекс Диск</string>
-       </property>
-      </widget>
      </item>
      <item row="2" column="0">
       <widget class="QLabel" name="label_4">
@@ -68,7 +71,14 @@
      <item row="0" column="0" colspan="3">
       <widget class="QLabel" name="label_3">
        <property name="text">
-        <string>Загрузить файл</string>
+        <string>Загрузить файл:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" colspan="3">
+      <widget class="QPushButton" name="btnUploadFile">
+       <property name="text">
+        <string>Отправить на Яндекс Диск</string>
        </property>
       </widget>
      </item>
@@ -80,26 +90,71 @@
       </widget>
      </item>
      <item row="3" column="1" colspan="2">
-      <widget class="QLineEdit" name="leNewFileName"/>
-     </item>
-     <item row="3" column="0">
-      <widget class="QLabel" name="label_5">
-       <property name="text">
-        <string>Новое имя:</string>
+      <widget class="QLineEdit" name="lePassword">
+       <property name="maxLength">
+        <number>32</number>
        </property>
       </widget>
      </item>
-     <item row="4" column="0">
+     <item row="3" column="0">
       <widget class="QLabel" name="label_6">
        <property name="text">
         <string>Пароль:</string>
        </property>
       </widget>
      </item>
-     <item row="4" column="1" colspan="2">
-      <widget class="QLineEdit" name="lePassword">
-       <property name="maxLength">
-        <number>32</number>
+    </layout>
+   </item>
+   <item>
+    <layout class="QGridLayout" name="gridLayout_3">
+     <item row="1" column="0" colspan="3">
+      <widget class="Line" name="line_2">
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0" colspan="3">
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>Зашифрованные файлы на Яндекс Диск:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QPushButton" name="btnDelete">
+       <property name="text">
+        <string>Удалить файл</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QPushButton" name="btnUpdate">
+       <property name="text">
+        <string>Обновить список</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0" colspan="3">
+      <widget class="QTableView" name="tvFileList"/>
+     </item>
+     <item row="4" column="2">
+      <widget class="QPushButton" name="btnDownload">
+       <property name="text">
+        <string>Скачать файл</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0" colspan="3">
+      <widget class="Line" name="line_3">
+       <property name="frameShadow">
+        <enum>QFrame::Plain</enum>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
        </property>
       </widget>
      </item>

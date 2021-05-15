@@ -183,8 +183,12 @@ void CryptManager::encryptFile_AES_256(const string &filePath_In, const string &
         CryptoPP::ArraySource as(iv, CryptoPP::AES::BLOCKSIZE, true, new CryptoPP::Redirector(file));
 
         CryptoPP::FileSource{inFile, true, new CryptoPP::StreamTransformationFilter{cipher, new CryptoPP::Redirector(file)}};
+
+        inFile.close();
+        outFile.close();
     }
     }
+
 }
 
 void CryptManager::encryptFile_AES_256_KF(const string &filePath_In, const string &filePath_Out, string sKey, cryptMode mode, const string &keyFilePath)
@@ -237,8 +241,11 @@ void CryptManager::decryptFile_AES_256(const string &filePath_In, const string &
     }
     memcpy(key, sKey.c_str(), CryptoPP::AES::MAX_KEYLENGTH);
 
+    qDebug() << "OK1";
     CryptoPP::SecByteBlock iv(CryptoPP::AES::BLOCKSIZE);
-    CryptoPP::FileSource fileSource(filePath_In.c_str(), false);
+    qDebug() << "OK2";
+    CryptoPP::FileSource fileSource(filePath_In.c_str(), false); // Тут ошибка
+    qDebug() << "OK3";
 
     CryptoPP::ArraySink as(iv, iv.size());
     fileSource.Attach(new CryptoPP::Redirector(as));
