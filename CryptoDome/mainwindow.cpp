@@ -8,6 +8,8 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    setWindowIcon(QIcon(":/new/prefix1/Resources/safeIcon.png"));
+
     ui->btnTextModePanel->setVisible(false);
 
     idleModePanel = new idlePanel();
@@ -18,6 +20,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->btnSignModePanel, &QPushButton::clicked, this, &MainWindow::onClick_btnSignModePanel);
     connect(ui->btnHashModePanel, &QPushButton::clicked, this, &MainWindow::onClick_btnHashModePanel);
     connect(ui->btnYandexModePanel, &QPushButton::clicked, this, &MainWindow::onClick_btnYandexModePanel);
+    connect(ui->actionGenPassword, &QAction::triggered, this, &MainWindow::showGeneratePasswordDialog);
+    connect(ui->btnPassMngr, &QPushButton::clicked, this, &MainWindow::onClick_btnPassMngrPanel);
 }
 
 MainWindow::~MainWindow()
@@ -41,7 +45,9 @@ void MainWindow::onClick_btnFileModePanel()
         textModeIsOpened = false;
         hashModeIsOpened = false;
         signModeIsOpened = false;
+        passMngrIsOpened = false;
         yandexModeIsOpened = false;
+
     }
 }
 
@@ -61,6 +67,7 @@ void MainWindow::onClick_btnTextModePanel()
         fileModeIsOpened = false;
         hashModeIsOpened = false;
         signModeIsOpened =false;
+        passMngrIsOpened = false;
         yandexModeIsOpened = false;
     }
 }
@@ -81,6 +88,7 @@ void MainWindow::onClick_btnSignModePanel()
         textModeIsOpened = false;
         hashModeIsOpened = false;
         fileModeIsOpened = false;
+        passMngrIsOpened = false;
         yandexModeIsOpened = false;
     }
 }
@@ -101,6 +109,7 @@ void MainWindow::onClick_btnHashModePanel()
         fileModeIsOpened = false;
         textModeIsOpened = false;
         signModeIsOpened = false;
+        passMngrIsOpened = false;
         yandexModeIsOpened = false;
     }
 }
@@ -116,6 +125,7 @@ void MainWindow::clearLayout()
     textModeIsOpened = false;
     signModeIsOpened = false;
     hashModeIsOpened = false;
+    passMngrIsOpened = false;
     yandexModeIsOpened = false;
 }
 
@@ -135,7 +145,39 @@ void MainWindow::onClick_btnYandexModePanel()
         fileModeIsOpened = false;
         textModeIsOpened = false;
         signModeIsOpened = false;
+        passMngrIsOpened = false;
         yandexModeIsOpened = true;
+    }
+}
+
+void MainWindow::onClick_btnPassMngrPanel()
+{
+    if(passMngrIsOpened == false)
+    {
+        if(ui->verticalLayout_4->count() > 0)
+        {
+            clearLayout();
+            passMngrIsOpened = false;
+        }
+        clearLayout();
+        passMngrPanel = new PassMngrPanel();
+        ui->verticalLayout_4->insertWidget(1, passMngrPanel);
+        hashModeIsOpened = false;
+        fileModeIsOpened = false;
+        textModeIsOpened = false;
+        signModeIsOpened = false;
+        yandexModeIsOpened = false;
+        passMngrIsOpened = true;
+    }
+}
+
+void MainWindow::showGeneratePasswordDialog()
+{
+    PasswordGeneratorDialog passDialog(this);
+    passDialog.setWindowTitle("Генератор паролей");
+    if(passDialog.exec() == QDialog::Accepted)
+    {
+
     }
 }
 

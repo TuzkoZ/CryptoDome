@@ -1,4 +1,4 @@
-QT       += core gui network
+QT       += core gui network xml
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -17,33 +17,57 @@ QMAKE_CXXFLAGS_RELEASE += /MT
 SOURCES += \
     cryptmanager.cpp \
     filemodepanel.cpp \
+    genpasswidget.cpp \
+    graphicgenerator.cpp \
     hashmanager.cpp \
     hashmodepanel.cpp \
     idlepanel.cpp \
     main.cpp \
     mainwindow.cpp \
+    newpassrecord.cpp \
+    passmngrpanel.cpp \
+    passmngrsettings.cpp \
+    passmngrstorage.cpp \
+    passrecord.cpp \
+    passwordgeneratordialog.cpp \
     signmanager.cpp \
     signmodepanel.cpp \
+    storagemngr.cpp \
     textmodepanel.cpp \
     yandexmodepanel.cpp
 
 HEADERS += \
     cryptmanager.h \
     filemodepanel.h \
+    genpasswidget.h \
+    graphicgenerator.h \
     hashmanager.h \
     hashmodepanel.h \
     idlepanel.h \
     mainwindow.h \
+    newpassrecord.h \
+    passmngrpanel.h \
+    passmngrsettings.h \
+    passmngrstorage.h \
+    passrecord.h \
+    passwordgeneratordialog.h \
     signmanager.h \
     signmodepanel.h \
+    storagemngr.h \
     textmodepanel.h \
     yandexmodepanel.h
 
 FORMS += \
     filemodepanel.ui \
+    genpasswidget.ui \
     hashmodepanel.ui \
     idlepanel.ui \
     mainwindow.ui \
+    newpassrecord.ui \
+    passmngrpanel.ui \
+    passmngrsettings.ui \
+    passmngrstorage.ui \
+    passwordgeneratordialog.ui \
     signmodepanel.ui \
     textmodepanel.ui \
     yandexmodepanel.ui

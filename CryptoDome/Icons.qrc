@@ -1,5 +1,6 @@
 <RCC>
     <qresource prefix="/new/prefix1">
         <file>Resources/safeIcon.png</file>
+        <file>Resources/check.png</file>
     </qresource>
 </RCC>

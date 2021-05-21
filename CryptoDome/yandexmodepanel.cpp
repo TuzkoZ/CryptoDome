@@ -7,6 +7,8 @@ YandexModePanel::YandexModePanel(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->lePassword->setPlaceholderText("Максимальная длина: 32 символов");
+    ui->tvFileList->setEditTriggers(QAbstractItemView::NoEditTriggers);
+
 
     mngr = new QNetworkAccessManager();
 
